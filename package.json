@@ -1,16 +1,15 @@
 {
-  "name": "gulp-loopback-sdk-angular",
-  "version": "0.2.0",
-  "description": "gulp plugin for auto-generating Angular $resource services for LoopBack",
+  "name": "gulp-loopback-sdk-angular-ds",
+  "version": "1.0.0",
+  "description": "Delta Source gulp plugin for auto-generating Angular $resource services for LoopBack",
   "license": "MIT",
-  "repository": "strongloop/gulp-loopback-sdk-angular",
+  "repository": "deltasource/gulp-loopback-sdk-angular",
   "author": {
-    "name": "Zi Ming Lin",
-    "email": "zi.lin9@gmail.com",
-    "url": "https://github.com/zimlin"
+    "name": "Daan Kets",
+    "email": "daankets@deltasource.eu"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "scripts": {
     "test": "mocha --timeout 5000"
@@ -26,6 +25,7 @@
   "dependencies": {
     "gulp-util": "^3.0.1",
     "loopback-sdk-angular": "^3.0.0",
+    "q": "^1.5.0",
     "through2": "^1.1.1",
     "watchjs": "0.0.0"
   },
