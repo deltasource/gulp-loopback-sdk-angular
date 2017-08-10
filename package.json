@@ -1,6 +1,6 @@
 {
   "name": "@deltasource/gulp-loopback-sdk-angular-ds",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Delta Source gulp plugin for auto-generating Angular $resource services for LoopBack",
   "license": "MIT",
   "repository": "deltasource/gulp-loopback-sdk-angular",
