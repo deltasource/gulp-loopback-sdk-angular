@@ -1,5 +1,5 @@
 {
-  "name": "gulp-loopback-sdk-angular-ds",
+  "name": "@deltasource/gulp-loopback-sdk-angular-ds",
   "version": "1.0.0",
   "description": "Delta Source gulp plugin for auto-generating Angular $resource services for LoopBack",
   "license": "MIT",
@@ -23,8 +23,8 @@
     "loopback"
   ],
   "dependencies": {
-    "gulp-util": "^3.0.1",
-    "loopback-sdk-angular": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "loopback-sdk-angular": "^3.2.0",
     "q": "^1.5.0",
     "through2": "^1.1.1",
     "watchjs": "0.0.0"
