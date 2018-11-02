@@ -34,34 +34,27 @@ module.exports = function(options) {
 
 				})
 				.then((app) => {
-					return app.$promise.then(() => {
-						var script = generator.services(
-							app,
-							options.ngModuleName,
-							options.apiUrl
-						);
+					return app
+						.boot()
+						.then(() => {
+							var script = generator.services(
+								app,
+								options.ngModuleName,
+								options.apiUrl
+							);
 
-						file.contents = new Buffer(script);
+							file.contents = new Buffer(script);
 
-						gutil.log("Generated Angular services file.");
+							gutil.log("Generated Angular services file.");
 
-						this.push(file);
-
-						var dataSources = app.dataSources;
-						for (var dataSource in dataSources) {
-							if (dataSources.hasOwnProperty(dataSource)) {
-								var ds = dataSources[dataSource];
-								ds.disconnect();
-							}
-						}
-					});
+							this.push(file);
+						})
+						.then(() => app.shutdown());
 				})
 				.fail((err) => {
 					this.emit("error", new gutil.PluginError("gulp-loopback-sdk-angular", err));
 				})
 				.nodeify(cb);
-
-
 		}
 	);
 };
