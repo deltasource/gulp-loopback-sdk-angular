@@ -18,7 +18,7 @@ module.exports = function(options) {
 				.fcall(() => {
 					let app = require(path.resolve(file.path));
 
-					//  Incase options is undefined.
+					//  In case options is undefined.
 					options = options || {ngModuleName: "lbServices", apiUrl: undefined};
 
 					options.ngModuleName = options.ngModuleName || "lbServices";
@@ -37,7 +37,7 @@ module.exports = function(options) {
 					return app
 						.boot()
 						.then(() => {
-							var script = generator.services(
+							let script = generator.services(
 								app,
 								options.ngModuleName,
 								options.apiUrl
@@ -49,7 +49,8 @@ module.exports = function(options) {
 
 							this.push(file);
 						})
-						.then(() => app.shutdown());
+						.then(() => app.shutdown())
+						.then(() => file);
 				})
 				.fail((err) => {
 					this.emit("error", new gutil.PluginError("gulp-loopback-sdk-angular", err));
